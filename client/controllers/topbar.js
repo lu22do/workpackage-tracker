@@ -1,9 +1,9 @@
 Template.topbar.helpers({
-  stuffsactive: function() {    
-    return Router.current().route.getName() === 'stuffs' ? 'active' : '';
+  workpackagesactive: function() {    
+    return Router.current().route.getName() === 'workpackages' ? 'active' : '';
   }, 
-  newstuffactive: function() {    
-    return Router.current().route.getName() === 'newstuff' ? 'active' : '';
+  newworkpackageactive: function() {    
+    return Router.current().route.getName() === 'newworkpackage' ? 'active' : '';
   },  
   usersactive: function() {    
     return Router.current().route.getName() === 'users' ? 'active' : '';

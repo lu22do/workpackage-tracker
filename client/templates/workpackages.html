@@ -1,0 +1,91 @@
+<template name="newworkpackage">
+  <div class="container">
+    <h3>Create new workpackage:</h3>
+    <form id="new-workpackage-form" action="action">
+        <div class="form-group">
+          <label>Workpackage name</label>
+          <input class="form-control" type="text" id="name"/>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input class="form-control" type="text" id="location"/>
+        </div>
+        <div class="form-group">
+          <label>Tech lead</label>
+          <input class="form-control" type="text" id="tech_lead"/>
+        </div>
+        <input class="btn btn-default" type="submit" id="submit-button" value="Create"/>
+    </form>
+    </div>
+</template>
+
+<template name="editworkpackage">
+  <div class="container">
+    <h3>Update this workpackage:</h3>
+    <form id="edit-workpackage-form" action="action" data-id="{{_id}}">
+        <div class="form-group">
+          <label>Workpackage name</label>
+          <input class="form-control" type="text" id="name" value="{{name}}"/>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input class="form-control" type="text" id="location" value="{{location}}"/>
+        </div>
+        <div class="form-group">
+          <label>Tech lead</label>
+          <input class="form-control" type="text" id="tech_lead" value="{{tech_lead}}"/>
+        </div>
+        <div class="form-group">
+          <label>Status</label>
+          <input class="form-control" type="text" id="status" value="{{status}}"/>
+        </div>
+        <input class="btn btn-default" type="submit" id="update-button" value="Update"/>
+        <a class="btn btn-default" href="/workpackages">Cancel</a>
+    </form>
+    </div>
+</template>
+
+<template name="workpackages">
+  <div class="container">
+    <div>
+    {{#if workpackageCount}}
+    <h1>Workpackages:</h1>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Tech lead</th>
+        <th>Status</th>
+        <th>Creator</th>
+        <th>Create date</th>
+        <th>Last update</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each workpackages}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{location}}</td>
+        <td>{{tech_lead}}</td>
+        <td>{{status}}</td>
+        <td>{{ownername}}</td>
+        <td>{{created}}</td>
+        <td>{{updated}}</td>
+        <td>
+          {{#if isMyWorkpackage}}
+          <a href="/editworkpackage/{{id}}">Edit</a> / 
+          <a id="delete-workpackage" data-id="{{id}}" href="">Delete</a>
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    No workpackages found   
+    {{/if}}
+    </div>
+  </div>
+</template>
