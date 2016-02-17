@@ -1,9 +1,12 @@
-This is a meteor project based on lu22do/accounts-boilerplate to track what we call workpackages at my company i.e. small projects that are merged into the big code base of the product. 
+This is a meteor project based on lu22do/accounts-boilerplate to collaboratively track workpackages. What we call workpackages at my company are small projects that are merged into the big code base of the product. 
 
-A workpackage is created.
-List of  workpackage can be seen.
-Individual workpackage can be edited.
-It has a bunch of attributes.
+Main features:
+- A workpackage is created.
+- List of  workpackages can be seen along with visualization.
+- Individual workpackage can be seen / edited.
+- Each workpackage has a bunch of attributes or list of things that can themselves be edited.
+- Status/progress can be done.
+- History of all changes (per wp).
 
 
 
@@ -21,6 +24,12 @@ Templates:
     - Workpackage list
     - Create workpackage
     - Edit workpackage
+    - View workpackage
+    - Editable lists:
+        - requirement list
+        - contributor list
+        - task list
+        - output documents list 
 - Users
     - User list
 

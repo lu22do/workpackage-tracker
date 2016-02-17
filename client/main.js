@@ -18,6 +18,12 @@ Router.route('/', function() {
 });
 
 Router.route('/workpackages');
+Router.route('/workpackage/:_id', {
+  template: 'workpackage',
+  data: function(){
+    return Workpackages.findOne(this.params._id);
+  }
+});
 Router.route('/newworkpackage');
 Router.route('/editworkpackage/:_id', {
 	template: 'editworkpackage',

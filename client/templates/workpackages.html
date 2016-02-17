@@ -1,50 +1,3 @@
-<template name="newworkpackage">
-  <div class="container">
-    <h3>Create new workpackage:</h3>
-    <form id="new-workpackage-form" action="action">
-        <div class="form-group">
-          <label>Workpackage name</label>
-          <input class="form-control" type="text" id="name"/>
-        </div>
-        <div class="form-group">
-          <label>Location</label>
-          <input class="form-control" type="text" id="location"/>
-        </div>
-        <div class="form-group">
-          <label>Tech lead</label>
-          <input class="form-control" type="text" id="tech_lead"/>
-        </div>
-        <input class="btn btn-default" type="submit" id="submit-button" value="Create"/>
-    </form>
-    </div>
-</template>
-
-<template name="editworkpackage">
-  <div class="container">
-    <h3>Update this workpackage:</h3>
-    <form id="edit-workpackage-form" action="action" data-id="{{_id}}">
-        <div class="form-group">
-          <label>Workpackage name</label>
-          <input class="form-control" type="text" id="name" value="{{name}}"/>
-        </div>
-        <div class="form-group">
-          <label>Location</label>
-          <input class="form-control" type="text" id="location" value="{{location}}"/>
-        </div>
-        <div class="form-group">
-          <label>Tech lead</label>
-          <input class="form-control" type="text" id="tech_lead" value="{{tech_lead}}"/>
-        </div>
-        <div class="form-group">
-          <label>Status</label>
-          <input class="form-control" type="text" id="status" value="{{status}}"/>
-        </div>
-        <input class="btn btn-default" type="submit" id="update-button" value="Update"/>
-        <a class="btn btn-default" href="/workpackages">Cancel</a>
-    </form>
-    </div>
-</template>
-
 <template name="workpackages">
   <div class="container">
     <div>
@@ -66,7 +19,9 @@
       <tbody>
       {{#each workpackages}}
       <tr>
-        <td>{{name}}</td>
+        <td>
+          <a href="/workpackage/{{id}}">{{name}}</a>
+        </td>
         <td>{{location}}</td>
         <td>{{tech_lead}}</td>
         <td>{{status}}</td>
