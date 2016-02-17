@@ -39,5 +39,6 @@ This project was created by the following packages:
     - accounts-password
     - iron:router (+ ejson)
     - twbs:bootstrap
-- aldeed:collection2
+- aldeed:collection2 for schemas
+- momentjs:moment for display of date 
 

@@ -12,8 +12,8 @@ Template.workpackages.helpers({
               location: workpackage.location,      
               tech_lead: workpackage.tech_lead,      
               status: workpackage.status,
-              created: workpackage.created,
-              updated: workpackage.updated,      
+              created: moment(workpackage.created).calendar(),
+              updated: moment(workpackage.updated).calendar(),      
               id: workpackage._id,      
               ownername: user ? user.username : "unknown",
               isMyWorkpackage: isMyWorkpackage};

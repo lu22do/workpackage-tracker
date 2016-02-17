@@ -21,3 +21,4 @@ accounts-password
 iron:router
 twbs:bootstrap
 aldeed:collection2
+momentjs:moment
