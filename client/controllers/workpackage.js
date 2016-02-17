@@ -52,3 +52,30 @@ Template.editworkpackage.events({
   }
 });
 
+Template.workpackage.helpers({
+  fields: function() {
+    var wp = Workpackages.findOne(this._id);
+    var res = [];
+
+    for (var field in wp) {
+      if (field === '_id') {
+        continue;
+      }
+
+      var value = wp[field];
+
+      if (field === 'owner') {
+        var user = Meteor.users.findOne(value);
+        value = user ? user.username : 'unknown';
+      } 
+      else if (field === 'created' || field === 'updated') {
+        value = moment(value).calendar();
+      }
+
+      res.push({label: WorkpackageSchema.label(field), value: value});
+    }
+
+    return res;
+  }
+});
+

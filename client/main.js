@@ -21,7 +21,7 @@ Router.route('/workpackages');
 Router.route('/workpackage/:_id', {
   template: 'workpackage',
   data: function(){
-    return Workpackages.findOne(this.params._id);
+    return {_id: this.params._id}; // inject into template, retrieved with this._id in helpers
   }
 });
 Router.route('/newworkpackage');
