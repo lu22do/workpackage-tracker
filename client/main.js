@@ -28,7 +28,8 @@ Router.route('/newworkpackage');
 Router.route('/editworkpackage/:_id', {
 	template: 'editworkpackage',
   data: function(){
-    return Workpackages.findOne(this.params._id);
+    return {_id: this.params._id}; // inject into template, retrieved with this._id in helpers
+//    return Workpackages.findOne(this.params._id);
   }
 });
 Router.route('/users');

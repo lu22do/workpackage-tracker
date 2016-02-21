@@ -10,7 +10,6 @@ Template.workpackages.helpers({
 
       return {name: workpackage.name, 
               location: workpackage.location,      
-              tech_lead: workpackage.tech_lead,      
               status: workpackage.status,
               created: moment(workpackage.created).calendar(),
               updated: moment(workpackage.updated).calendar(),      

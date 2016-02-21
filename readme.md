@@ -28,6 +28,7 @@ Templates:
     - Editable lists:
         - requirement list
         - contributor list
+        - link list (eg wiki page)
         - task list
         - output documents list 
 - Users
@@ -39,6 +40,6 @@ This project was created by the following packages:
     - accounts-password
     - iron:router (+ ejson)
     - twbs:bootstrap
-- aldeed:collection2 for schemas
+- aldeed:collection2 for schemas (relies on aldeed:simple-schema[])
 - momentjs:moment for display of date 
 
